@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="drai06" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="234.66666" posY="590.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="-610.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-410.0" posY="-390.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="-550.0"/>
+        <content>le=Read("Ingrese una letra del alfabeto");	;	</content>
+        <comment>"Ingrese una letra del alfabeto";	le ;	</comment>
+        <connect ID="9"/>
+        <io array="0" inputType="1" ioType="2" message="Ingrese una letra del alfabeto" variable="le"/>
+      </block>
+      <block id="4" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-300.0"/>
+        <content>vocales[i]==le</content>
+        <connect ID="6" value="true"/>
+        <connect ID="10" value="false"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-510.0" posY="-300.0"/>
+        <content>Writeln("" + (getValueOf(le))+" es una consonante");	;	</content>
+        <comment>le+ " es una consonante" </comment>
+        <io ioType="1" message="" messageSuffix=" es una consonante" newLine="true" variable="le"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="-150.0"/>
+        <content>Writeln("" + (getValueOf(le))+" es una vocal ");	;	</content>
+        <comment>le+ " es una vocal " </comment>
+        <io ioType="1" message="" messageSuffix=" es una vocal " newLine="true" variable="le"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-280.0" posY="-390.0"/>
+        <content>i&lt;tam</content>
+        <connect ID="13" value="true"/>
+        <connect ID="2" value="false"/>
+      </block>
+      <block id="8" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-120.0" posY="-760.0"/>
+        <content>Grupo: 6&#13;;	Nombre: Juliana Ruiz Sánchez&#13;;	Documento:1001370876&#13;;	enunciado: Escriba un programa que tome un carácter (es decir, un string de longitud 1) y determine si el carácter es vocal o consonante.&#13;;	Análisis:&#13;;	-Entrada: le=letra&#13;;	-Salida: le=vocal o consonante&#13;;	-Auxiliares: &#13;;		vocales=vocales del abecedario&#13;;		consonantes=consonantes del abecedario&#13;;		i=contador&#13;;		ta=numero total de vocales&#13;;		tam=número total de consonantes&#13;;	</content>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-470.0"/>
+        <content>vocales='aeiouAEIOU';	consonantes='bcdfghjklmnpqrstvxyzABCDFGHJKLMNPQRSTVWXYZ';	i=0;	ta=vocales.length;	tam=consonantes.length</content>
+        <connect ID="12"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="130.0" posY="-350.0"/>
+        <content>i=i+1</content>
+        <connect ID="12"/>
+      </block>
+      <block id="11" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-130.0" posY="-390.0"/>
+        <content>i=0</content>
+        <connect ID="7"/>
+      </block>
+      <block id="12" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-390.0"/>
+        <content>i&lt;ta</content>
+        <connect ID="4" value="true"/>
+        <connect ID="11" value="false"/>
+      </block>
+      <block id="13" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-280.0" posY="-300.0"/>
+        <content>consonantes[i]==le</content>
+        <connect ID="5" value="true"/>
+        <connect ID="14" value="false"/>
+      </block>
+      <block id="14" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-130.0" posY="-300.0"/>
+        <content>i=i+1</content>
+        <connect ID="7"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

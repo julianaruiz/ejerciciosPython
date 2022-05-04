@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="20.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-20.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="360.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="50.0"/>
+        <content>h=ReadNumber("Ingrese la altura del cilindro");	;	</content>
+        <comment>"Ingrese la altura del cilindro";	h ;	</comment>
+        <connect ID="4"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese la altura del cilindro" variable="h"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="120.0"/>
+        <content>r=ReadNumber("Ingrese el radio del cilindro");	;	</content>
+        <comment>"Ingrese el radio del cilindro";	r ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el radio del cilindro" variable="r"/>
+      </block>
+      <block id="5" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="190.0"/>
+        <content>a=r*(2*3.1416)&#13;;	v=h*3.1416*r*2</content>
+        <connect ID="6"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="250.0"/>
+        <content>Writeln("La altura del cilindro es:" + (getValueOf(a)));	;	</content>
+        <comment>"La altura del cilindro es:" +a</comment>
+        <connect ID="7"/>
+        <io ioType="1" message="La altura del cilindro es:" messageSuffix="" newLine="true" variable="a"/>
+      </block>
+      <block id="7" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="310.0"/>
+        <content>Writeln("El volumen del cilindro es:" + (getValueOf(v)));	;	</content>
+        <comment>"El volumen del cilindro es:" +v</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="El volumen del cilindro es:" messageSuffix="" newLine="true" variable="v"/>
+      </block>
+      <block id="8" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="-160.0"/>
+        <content>Grupo: 6&#13;;	Nombre: Juliana Ruiz Sánchez&#13;;	Documento:1001370876&#13;;	Enunciado: Determinar el área y volumen de un cilindro, dada su altura y su radio.&#13;;	Análisis: &#13;;	-Entradas: h=altura&#13;;	           r=radio&#13;;	-Salidas: a=área&#13;;	          v=volumen&#13;;	          </content>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

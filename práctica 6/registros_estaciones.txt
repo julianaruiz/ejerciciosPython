@@ -1,0 +1,7 @@
+:Medellín,Bello,Itagüí,Envigado,Caldas,Copacabana,La Estrella,Girardota,Sabaneta,Barbosa
+1,Universidad San Buenaventura,Medellín
+2,I.E. Concejo Municipal de Itagüí,Itagüí
+3,E U Joaquín Aristizabal,Caldas
+4,Hospital,La Estrella
+5,Torre Social,Barbosa
+6,Parque principal,Caldas

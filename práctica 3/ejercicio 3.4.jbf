@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="340.0" posY="120.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-130.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-400.0" posY="-100.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-30.0" posY="-320.0"/>
+        <content>Grupo:6&#13;;	Nombre:Juliana Ruiz Sánchez&#13;;	Documetno:1001370876&#13;;	Enunciado: Reciba una palabra del usuario y un número entero menor que 26. El programa debe cambiar cada letra por la que &#13;;	le corresponda al dar saltos en el alfabeto de acuerdo al número especificado por el usuario. La nueva palabra codificada &#13;;	deberá ser mostrada en pantalla.&#13;;	Análisis: &#13;;	-Entrada: pal=palabra ingresada&#13;;	-Salida: np=nueva palabra&#13;;	-Auxiliares: &#13;;	    com=contador frase&#13;;	    ta=tamaño de la palabra&#13;;	    c=contador letras a mover&#13;;	    i=contador&#13;;	    alf=alfabeto</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-50.0"/>
+        <content>pal=Read("Ingrese una palabra");	;	</content>
+        <comment>"Ingrese una palabra";	pal ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="1" ioType="2" message="Ingrese una palabra" variable="pal"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="200.0" posY="130.0"/>
+        <content>n=ReadNumber("Ingrese un número ");	;	</content>
+        <comment>"Ingrese un número ";	n ;	</comment>
+        <connect ID="10"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese un número " variable="n"/>
+      </block>
+      <block id="6" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="40.0"/>
+        <content>ta=pal.length&#13;;	com=0</content>
+        <connect ID="7"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="200.0" posY="40.0"/>
+        <content>com&lt;ta</content>
+        <connect ID="8" value="true"/>
+        <connect ID="5" value="false"/>
+      </block>
+      <block id="8" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="200.0" posY="-50.0"/>
+        <content>pal[com]==' '</content>
+        <connect ID="4" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="370.0" posY="-50.0"/>
+        <content>com=com+1</content>
+        <connect ID="7"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-130.0" posY="130.0"/>
+        <content>c=0&#13;;	i=0&#13;;	np=''&#13;;	alf='abcdefghijklmnopqrstuvwxyz'</content>
+        <connect ID="11"/>
+      </block>
+      <block id="11" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-400.0" posY="130.0"/>
+        <content>i&lt;ta</content>
+        <connect ID="13" value="false"/>
+        <connect ID="12" value="true"/>
+      </block>
+      <block id="12" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-610.0" posY="130.0"/>
+        <content>c=alf.indexOf(pal[i])&#13;;	c=c+n</content>
+        <connect ID="14"/>
+      </block>
+      <block id="13" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-400.0" posY="0.0"/>
+        <content>Writeln("" + (getValueOf(np)));	;	</content>
+        <comment>np</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix="" newLine="true" variable="np"/>
+      </block>
+      <block id="14" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-610.0" posY="240.0"/>
+        <content>c&gt;26</content>
+        <connect ID="15" value="true"/>
+        <connect ID="18" value="false"/>
+      </block>
+      <block id="15" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-710.0" posY="240.0"/>
+        <content>c=c-26;	</content>
+        <connect ID="16"/>
+      </block>
+      <block id="16" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-600.0" posY="410.0"/>
+        <content>np=np+alf[c]</content>
+        <connect ID="17"/>
+      </block>
+      <block id="17" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-400.0" posY="320.0"/>
+        <content>i=i+1</content>
+        <connect ID="11"/>
+      </block>
+      <block id="18" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-490.0" posY="240.0"/>
+        <content>c&lt;0</content>
+        <connect ID="19" value="true"/>
+        <connect ID="16" value="false"/>
+      </block>
+      <block id="19" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-360.0" posY="240.0"/>
+        <content>c=26+c</content>
+        <connect ID="16"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

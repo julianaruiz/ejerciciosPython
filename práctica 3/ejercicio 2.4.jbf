@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="-120.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="10.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="320.0" posY="410.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="70.0"/>
+        <content>t=ReadNumber("Ingrese el tiempo en minutos");	;	</content>
+        <comment>"Ingrese el tiempo en minutos";	t ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el tiempo en minutos" variable="t"/>
+      </block>
+      <block id="4" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="230.0"/>
+        <content>c=10*t</content>
+        <connect ID="10"/>
+      </block>
+      <block id="5" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-120.0"/>
+        <content>Grupo: 6;	Nombre: Juliana Ruiz Sánchez;	Documento:1001370876;	Enunciado: En un sistema de bicicletas públicas se cobra a los usuarios $10 pesos por minuto de uso hasta un máximo de 2 horas. ;	El tiempo adicional se cobra con un sobrecargo de $50 pesos por minuto, pero si supera las 24 horas se cobra un ;	sobrecargo fijo de $100.000 pesos. Haga un algoritmo que calcule el monto a cobrar a un usuario dado el tiempo que ;	usó la bicicleta.;	Análisis:;	-Entradas: t=tiempo;	-Salidas: c=sobrecargo</content>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="140.0"/>
+        <content>t&lt;=120</content>
+        <connect ID="7" value="false"/>
+        <connect ID="4" value="true"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="150.0" posY="180.0"/>
+        <content>t&lt;1440</content>
+        <connect ID="9" value="false"/>
+        <connect ID="8" value="true"/>
+      </block>
+      <block id="8" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="150.0" posY="250.0"/>
+        <content>c=(t-120)*50+1200</content>
+        <connect ID="11"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="320.0" posY="250.0"/>
+        <content>c=67150+100000</content>
+        <connect ID="12"/>
+      </block>
+      <block id="10" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-30.0" posY="310.0"/>
+        <content>Writeln("El sobrecargo es:" + (getValueOf(c)));	;	</content>
+        <comment>"El sobrecargo es:" +c</comment>
+        <io ioType="1" message="El sobrecargo es:" messageSuffix="" newLine="true" variable="c"/>
+      </block>
+      <block id="11" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="150.0" posY="310.0"/>
+        <content>Writeln("El sobrecargo es:" + (getValueOf(c)));	;	</content>
+        <comment>"El sobrecargo es:" +c</comment>
+        <io ioType="1" message="El sobrecargo es:" messageSuffix="" newLine="true" variable="c"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="320.0" posY="310.0"/>
+        <content>Writeln("El sobrecargo es:" + (getValueOf(c)));	;	</content>
+        <comment>"El sobrecargo es:" +c</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="El sobrecargo es:" messageSuffix="" newLine="true" variable="c"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

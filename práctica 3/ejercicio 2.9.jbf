@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="drai06" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="-60.0" posY="-190.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-120.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="810.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="50.0" posY="-330.0"/>
+        <content>Grupo: 6;	Nombre: Juliana Ruiz Sánchez;	Documento: 1001370876;	Enunciado:;	Análisis:Haga un algoritmo para calcular el costo de un serivio de video streaming por demanda.El algoritmo recibirá el momento en que inició y terminó la reproducción de videos, ;	mediante dos números enteros máximo de 6 dígitos, que representan las horas (00-23), los minutos (00-59) y los segundos (00-59). el c osto del servicio es de $2 pesos por segundo, ;	con un cobro mínimo de $1000 pesos.;	-Entrada: i=hora,minutoss y segundos de inicio;	          f=hora, minutos y segundos de inicio;	-Salida: t=total a pagar;	-Auxiliares: si=segundo inicial;	             mi=minuto final;	             hi=hora inicial;	             sf=segundo final;	             mf=minuto final;	             hf=hora final;	             s=segundos totales;	             m=minutos totales;	             h=horas totales</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-60.0"/>
+        <content>i=ReadNumber("Ingrese la hora, los minutos y los segundos de inicio");	;	</content>
+        <comment>"Ingrese la hora, los minutos y los segundos de inicio";	i ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese la hora, los minutos y los segundos de inicio" variable="i"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="0.0"/>
+        <content>f=ReadNumber("Ingrese la hora, los minutos y los segundos de finalización");	;	</content>
+        <comment>"Ingrese la hora, los minutos y los segundos de finalización";	f ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese la hora, los minutos y los segundos de finalización" variable="f"/>
+      </block>
+      <block id="6" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="110.0"/>
+        <content>si=i%100;	mi=(i%10000)-si;	mi=mi div 100;	hi=i div 10000;	sf=f%100;	mf=(f%10000)-sf;	mf=mf div 100;	hf=f div 10000</content>
+        <connect ID="7"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="230.0"/>
+        <content>sf&lt;si</content>
+        <connect ID="8" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="8" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-150.0" posY="230.0"/>
+        <content>mf=mf-1;	sf=sf+60</content>
+        <connect ID="9"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="320.0"/>
+        <content>s=sf-si</content>
+        <connect ID="10"/>
+      </block>
+      <block id="10" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="390.0"/>
+        <content>mf&lt;mi</content>
+        <connect ID="11" value="true"/>
+        <connect ID="12" value="false"/>
+      </block>
+      <block id="11" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-120.0" posY="390.0"/>
+        <content>hf=hf-1;	mf=mf+60</content>
+        <connect ID="12"/>
+      </block>
+      <block id="12" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="470.0"/>
+        <content>m=(mf-mi)*60;	</content>
+        <connect ID="13"/>
+      </block>
+      <block id="13" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="530.0"/>
+        <content>hf&lt;hi</content>
+        <connect ID="14" value="true"/>
+        <connect ID="15" value="false"/>
+      </block>
+      <block id="14" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-120.0" posY="530.0"/>
+        <content>hf=hf+24;	</content>
+        <connect ID="15"/>
+      </block>
+      <block id="15" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="620.0"/>
+        <content>h=(hf-hi)*3600;	t=(h+m+s)*2</content>
+        <connect ID="17"/>
+      </block>
+      <block id="16" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="760.0"/>
+        <content>Writeln("El valor a pagar es " + (getValueOf(t)));	;	</content>
+        <comment>"El valor a pagar es " +t</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="El valor a pagar es " messageSuffix="" newLine="true" variable="t"/>
+      </block>
+      <block id="17" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="690.0"/>
+        <content>t&gt;1000</content>
+        <connect ID="16" value="true"/>
+        <connect ID="18" value="false"/>
+      </block>
+      <block id="18" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="210.0" posY="690.0"/>
+        <content>Writeln("EL valor a pagar es de 1.000");	;	</content>
+        <comment>"EL valor a pagar es de 1.000" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="EL valor a pagar es de 1.000" messageSuffix="" newLine="true" variable=""/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

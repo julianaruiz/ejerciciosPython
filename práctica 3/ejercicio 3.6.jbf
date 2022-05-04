@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="drai06" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-100.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-390.0" posY="70.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-250.0"/>
+        <content>Grupo:6;	Nombre:Juliana Ruiz Sánchez;	Documento:1001370876;	Enunciado.Haga un aldoritmo que determine si un año es bisiesto o no.;	Análisis:;	-Entrada: a=año ingresado;	-Salida: a=año bisiesto o no</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-40.0"/>
+        <content>a=ReadNumber("Ingrese un año");	;	</content>
+        <comment>"Ingrese un año";	a ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese un año" variable="a"/>
+      </block>
+      <block id="5" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="40.0"/>
+        <content>a%4==0</content>
+        <connect ID="6" value="true"/>
+        <connect ID="8" value="false"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-120.0" posY="40.0"/>
+        <content>a%100==0</content>
+        <connect ID="7" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-250.0" posY="40.0"/>
+        <content>a%400==0</content>
+        <connect ID="9" value="true"/>
+        <connect ID="8" value="false"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-120.0" posY="180.0"/>
+        <content>Writeln("" + (getValueOf(a))+" no es bisiesto");	;	</content>
+        <comment>a+ " no es bisiesto" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix=" no es bisiesto" newLine="true" variable="a"/>
+      </block>
+      <block id="9" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-180.0" posY="-60.0"/>
+        <content>Writeln("" + (getValueOf(a))+" es bisiesto");	;	</content>
+        <comment>a+ " es bisiesto" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix=" es bisiesto" newLine="true" variable="a"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

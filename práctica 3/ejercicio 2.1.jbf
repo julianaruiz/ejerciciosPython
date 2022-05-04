@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="drai06" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="3.9722223" posY="-10.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-80.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="270.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="-190.0"/>
+        <content>Grupo: 6;	Nombre: Juliana Ruiz Sánchez;	Documento: 1001370876;	Enunciado: Dado el valor del lado de un triángulo equilátero, haga un algoritmo que calcule su perímetro, su altura y su área.;	Análisis:;	-Entradas: l=lado;	-salidas: p=perimetro;	          h=altura;	          a=area;	</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-30.0"/>
+        <content>l=ReadNumber("Ingrese el lado del triángulo");	;	</content>
+        <comment>"Ingrese el lado del triángulo";	l ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el lado del triángulo" variable="l"/>
+      </block>
+      <block id="5" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="40.0"/>
+        <content>p=l+l+l;	h=(sqrt(3)*l)/2;	a=(l*h)/2</content>
+        <connect ID="6"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="110.0"/>
+        <content>Writeln("Perímetro=" + (getValueOf(p)));	;	</content>
+        <comment>"Perímetro=" +p</comment>
+        <connect ID="7"/>
+        <io ioType="1" message="Perímetro=" messageSuffix="" newLine="true" variable="p"/>
+      </block>
+      <block id="7" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="160.0"/>
+        <content>Writeln("Altura=" + (getValueOf(h)));	;	</content>
+        <comment>"Altura=" +h</comment>
+        <connect ID="8"/>
+        <io ioType="1" message="Altura=" messageSuffix="" newLine="true" variable="h"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="210.0"/>
+        <content>Writeln("Área=" + (getValueOf(a)));	;	</content>
+        <comment>"Área=" +a</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="Área=" messageSuffix="" newLine="true" variable="a"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="-100.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-200.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="60.0" posY="330.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-350.0"/>
+        <content>Grupo: 6;	Nombre: Juliana Ruiz Sánchez;	Documento:1001370876;	Enunciado: Haga un algoritmo que muestre en pantalla las soluciones de la ecuación ax2+bx+c==0, dados valores para los coeficientes a, b y c.;	Análisis:;	-Entradas: a=primer número;	           b=segundo número;	           c=tercer número;	-Salidas: x=valor de la ecuación;	          x1=valor de la ecuación;	          x2valor de la ecuación</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-140.0"/>
+        <content>a=ReadNumber("Ingrese el primer número");	;	</content>
+        <comment>"Ingrese el primer número";	a ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el primer número" variable="a"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-80.0"/>
+        <content>b=ReadNumber("Ingrese el segundo número");	;	</content>
+        <comment>"Ingrese el segundo número";	b ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el segundo número" variable="b"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-20.0"/>
+        <content>c=ReadNumber("Ingrese el tercer número");	;	</content>
+        <comment>"Ingrese el tercer número";	c ;	</comment>
+        <connect ID="7"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el tercer número" variable="c"/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="40.0"/>
+        <content>d=pow(b,2)-4*a*c</content>
+        <connect ID="9"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="60.0" posY="190.0"/>
+        <content>Writeln("El resultado es " + (getValueOf(x)));	;	</content>
+        <comment>"El resultado es " +x</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="El resultado es " messageSuffix="" newLine="true" variable="x"/>
+      </block>
+      <block id="9" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="100.0"/>
+        <content>d&lt;0</content>
+        <connect ID="10" value="true"/>
+        <connect ID="11" value="false"/>
+      </block>
+      <block id="10" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="190.0" posY="100.0"/>
+        <content>Writeln("las soluciones son complejas");	;	</content>
+        <comment>"las soluciones son complejas" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="las soluciones son complejas" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="11" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-110.0" posY="100.0"/>
+        <content>d&gt;0</content>
+        <connect ID="12" value="true"/>
+        <connect ID="15" value="false"/>
+      </block>
+      <block id="12" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-240.0" posY="100.0"/>
+        <content>x1=(-b+sqrt(d))/(2*a)&#13;;	x2=(-b-sqrt(d))/(2*a)</content>
+        <connect ID="13"/>
+      </block>
+      <block id="13" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-240.0" posY="260.0"/>
+        <content>Writeln("Las respuestas son " + (getValueOf(x1))+" y");	;	</content>
+        <comment>"Las respuestas son " +x1+ " y" </comment>
+        <connect ID="14"/>
+        <io ioType="1" message="Las respuestas son " messageSuffix=" y" newLine="true" variable="x1"/>
+      </block>
+      <block id="14" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-240.0" posY="330.0"/>
+        <content>Writeln("" + (getValueOf(x2)));	;	</content>
+        <comment>x2</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix="" newLine="true" variable="x2"/>
+      </block>
+      <block id="15" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-110.0" posY="190.0"/>
+        <content>x=-b/(2*a)</content>
+        <connect ID="8"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

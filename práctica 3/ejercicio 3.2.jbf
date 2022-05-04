@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="20.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-110.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="270.0" posY="170.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-30.0" posY="-260.0"/>
+        <content>Grupo: 6&#13;;	Nombre: Juliana Ruiz Sánchez&#13;;	Documento:1001370876&#13;;	enunciado: 3.2.	Escriba un programa que le pida al usuario una palabra o frase y una letra. El programa deberá imprimir la misma frase &#13;;	o palabra ingresada, pero ocultando la letra que ingresó el usuario con un asterisco.&#13;;	Análisis:&#13;;	-Entrada: &#13;;	        pa=palabra o frase&#13;;	        le=letra&#13;;	-Salida: nf=nueva frase&#13;;	-Auxiliares: &#13;;	    i=contador&#13;;	    ta=tamaño de la frase</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-50.0"/>
+        <content>pa=Read("Ingrese una palabra o frase ");	;	</content>
+        <comment>"Ingrese una palabra o frase ";	pa ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="1" ioType="2" message="Ingrese una palabra o frase " variable="pa"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="10.0"/>
+        <content>le=Read("Ingrese letra a ocultar");	;	</content>
+        <comment>"Ingrese letra a ocultar";	le ;	</comment>
+        <connect ID="6"/>
+        <io array="0" inputType="1" ioType="2" message="Ingrese letra a ocultar" variable="le"/>
+      </block>
+      <block id="6" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="90.0"/>
+        <content>nf=''&#13;;	i=0&#13;;	ta=pa.length&#13;;	</content>
+        <connect ID="7"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="170.0"/>
+        <content>i&lt;ta</content>
+        <connect ID="8" value="true"/>
+        <connect ID="12" value="false"/>
+      </block>
+      <block id="8" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="250.0"/>
+        <content>pa[i]==le</content>
+        <connect ID="9" value="true"/>
+        <connect ID="11" value="false"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="340.0"/>
+        <content>nf=nf+'*'</content>
+        <connect ID="10"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-250.0" posY="250.0"/>
+        <content>i=i+1</content>
+        <connect ID="7"/>
+      </block>
+      <block id="11" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-250.0" posY="340.0"/>
+        <content>nf=nf+pa[i]</content>
+        <connect ID="10"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="150.0" posY="170.0"/>
+        <content>Writeln("" + (getValueOf(nf)));	;	</content>
+        <comment>nf</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix="" newLine="true" variable="nf"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

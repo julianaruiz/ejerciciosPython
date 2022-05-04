@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="-90.0" posY="70.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-100.0"/>
+        <comment>Start</comment>
+        <connect ID="3"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="280.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-40.0"/>
+        <content>n1=ReadNumber("Ingrese el número a dividir");	;	</content>
+        <comment>"Ingrese el número a dividir";	n1 ;	</comment>
+        <connect ID="4"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el número a dividir" variable="n1"/>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="20.0"/>
+        <content>n2=ReadNumber("Ingrese el divisor");	;	</content>
+        <comment>"Ingrese el divisor";	n2 ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese el divisor" variable="n2"/>
+      </block>
+      <block id="5" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="110.0"/>
+        <content>n1%n2==0</content>
+        <connect ID="6" value="true"/>
+        <connect ID="8" value="false"/>
+      </block>
+      <block id="6" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="120.0" posY="110.0"/>
+        <content>n=n1/n2</content>
+        <connect ID="7"/>
+      </block>
+      <block id="7" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="190.0"/>
+        <content>Writeln("" + (getValueOf(n)));	;	</content>
+        <comment>n</comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix="" newLine="true" variable="n"/>
+      </block>
+      <block id="8" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-200.0" posY="110.0"/>
+        <content>n=n1/n2&#13;;	m=n%1&#13;;	n=n-m&#13;;	</content>
+        <connect ID="7"/>
+      </block>
+      <block id="9" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="10.0" posY="-230.0"/>
+        <content>Grupo:6&#13;;	Nombre:Juliana Ruiz Sánchez&#13;;	Documento:1001370876&#13;;	Enunciado: Haga un algoritmo que haga división entera de dos números sin el operador //&#13;;	Análisis:&#13;;	-Entradas: &#13;;	    n1=número a dividir&#13;;	    n2=número divisor&#13;;	-Salida: n=número resultante&#13;;	-Auxiliar: m=número decimal </content>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="0.0" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-110.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="390.0" posY="170.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="10.0" posY="-270.0"/>
+        <content>Grupo: 6&#13;;	Nombre: Juliana Ruiz Sánchez&#13;;	Documento:1001370765&#13;;	Enunciado: Haga un algoritmo que diga si un número ingresado es perfecto o no. &#13;;	Un número perfecto es un número que es igual a la suma de sus divisores propios &#13;;	positivos. De esta forma, 6 es un número perfecto porque sus divisores propios &#13;;	son 1, 2 y 3; y 6 = 1 + 2 + 3.&#13;;	Análisis:&#13;;	-Entrada: n=número ingresado&#13;;	-Salida: n=número ingresado&#13;;	-Auxiliares: d=contador&#13;;	             s=suma de los números propios</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-50.0"/>
+        <content>n=ReadNumber("Ingrese un número");	;	</content>
+        <comment>"Ingrese un número";	n ;	</comment>
+        <connect ID="9"/>
+        <io array="0" inputType="0" ioType="2" message="Ingrese un número" variable="n"/>
+      </block>
+      <block id="5" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="170.0" posY="170.0"/>
+        <content>Writeln("" + (getValueOf(n))+" no es un número perfecto");	;	</content>
+        <comment>n+ " no es un número perfecto" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix=" no es un número perfecto" newLine="true" variable="n"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="170.0" posY="90.0"/>
+        <content>s==n</content>
+        <connect ID="12" value="true"/>
+        <connect ID="5" value="false"/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-70.0" posY="270.0"/>
+        <content>s=s+d</content>
+        <connect ID="10"/>
+      </block>
+      <block id="8" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="90.0"/>
+        <content>d&lt;=n/2</content>
+        <connect ID="11" value="true"/>
+        <connect ID="6" value="false"/>
+      </block>
+      <block id="9" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="20.0"/>
+        <content>d=1;	s=0</content>
+        <connect ID="8"/>
+      </block>
+      <block id="10" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-140.0" posY="170.0"/>
+        <content>d=d+1</content>
+        <connect ID="8"/>
+      </block>
+      <block id="11" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="170.0"/>
+        <content>n%d==0</content>
+        <connect ID="7" value="true"/>
+        <connect ID="10" value="false"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="390.0" posY="90.0"/>
+        <content>Writeln("" + (getValueOf(n))+" es un número perfecto");	;	</content>
+        <comment>n+ " es un número perfecto" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="" messageSuffix=" es un número perfecto" newLine="true" variable="n"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

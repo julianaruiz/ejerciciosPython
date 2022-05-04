@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="11.148096" posY="0.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-110.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-160.0" posY="180.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="10.0" posY="-250.0"/>
+        <content>Grupo:6&#13;;	Nombre:Juliana Ruiz Sánchez&#13;;	Documento.1001370876&#13;;	Enunciado:3.3.	Haga un programa que determine si una palabra ingresada por el usuario es palíndroma o&#13;;	no. Utilice la instrucción while.&#13;;	Análisis: &#13;;	-Entrada: pal=palabra&#13;;	-auxiliares: ta=tamaño de la palabra&#13;;	             i=contador en aumento&#13;;	             com=comprobador de espacio&#13;;	             c=contador  disminuyendo</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-50.0"/>
+        <content>pal=Read("Ingrese una palabra");	;	</content>
+        <comment>"Ingrese una palabra";	pal ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="1" ioType="2" message="Ingrese una palabra" variable="pal"/>
+      </block>
+      <block id="5" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="40.0"/>
+        <content>ta=pal.length&#13;;	i=0&#13;;	com=0&#13;;	c=ta-1&#13;;	</content>
+        <connect ID="6"/>
+      </block>
+      <block id="6" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="180.0" posY="40.0"/>
+        <content>com&lt;ta</content>
+        <connect ID="7" value="true"/>
+        <connect ID="9" value="false"/>
+      </block>
+      <block id="7" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="180.0" posY="-50.0"/>
+        <content>pal[com]==' '</content>
+        <connect ID="4" value="true"/>
+        <connect ID="8" value="false"/>
+      </block>
+      <block id="8" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="340.0" posY="-50.0"/>
+        <content>com=com+1</content>
+        <connect ID="6"/>
+      </block>
+      <block id="9" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="180.0" posY="140.0"/>
+        <content>i&lt;ta</content>
+        <connect ID="10" value="true"/>
+        <connect ID="13" value="false"/>
+      </block>
+      <block id="10" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="180.0" posY="230.0"/>
+        <content>pal[i]==pal[c]</content>
+        <connect ID="11" value="true"/>
+        <connect ID="12" value="false"/>
+      </block>
+      <block id="11" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="350.0" posY="230.0"/>
+        <content>c=c-1&#13;;	i=i+1</content>
+        <connect ID="9"/>
+      </block>
+      <block id="12" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-10.0" posY="230.0"/>
+        <content>Writeln("No es palindroma");	;	</content>
+        <comment>"No es palindroma" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="No es palindroma" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="13" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="-20.0" posY="140.0"/>
+        <content>Writeln("Es palindroma");	;	</content>
+        <comment>"Es palindroma" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="Es palindroma" messageSuffix="" newLine="true" variable=""/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>

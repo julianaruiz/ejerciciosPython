@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><JavaBlocks author="JULI" scriptEngine="JavaScript" version="6010">
+  <option fullConnectorValues="true" grid="false" pascal="false"/>
+  <flowchart name="Start">
+    <canvas interval="200" posX="-100.0" posY="-60.0" zoom="4"/>
+    <blocks>
+      <block id="1" name="Start" type="START">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-100.0"/>
+        <comment>Start</comment>
+        <connect ID="4"/>
+      </block>
+      <block id="2" type="RETURN">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="260.0"/>
+        <comment>End</comment>
+      </block>
+      <block id="3" type="COMMENT">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="-10.0" posY="-230.0"/>
+        <content>Grupo: 6;	Nombre: Juliana Ruiz Sánchez;	Documento:1001370876;	Enunciado: Teniendo en cuenta que un carro necesita cambio de aceite cada 6.000 km, haga ;	un algoritmo que calcule cuántos cambios de aceite ha tenido un carro según el;	total de kilómetros que ha recorrido.;	Análisis:;	-Entrada: k=kilómetros;	-Salida: c=cambio de aceite</content>
+      </block>
+      <block id="4" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="-40.0"/>
+        <content>k=ReadNumber("Total de kilómetros recorridos");	;	</content>
+        <comment>"Total de kilómetros recorridos";	k ;	</comment>
+        <connect ID="5"/>
+        <io array="0" inputType="0" ioType="2" message="Total de kilómetros recorridos" variable="k"/>
+      </block>
+      <block id="5" type="DECISION">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="30.0"/>
+        <content>k&gt;=6000</content>
+        <connect ID="6" value="false"/>
+        <connect ID="7" value="true"/>
+      </block>
+      <block id="6" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="230.0" posY="30.0"/>
+        <content>Writeln("No se ha hecho cambio de aceite");	;	</content>
+        <comment>"No se ha hecho cambio de aceite" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="No se ha hecho cambio de aceite" messageSuffix="" newLine="true" variable=""/>
+      </block>
+      <block id="7" type="CPU">
+        <options displayComment="false"/>
+        <visual color="255 255 0" posX="0.0" posY="110.0"/>
+        <content>c=k div 6000</content>
+        <connect ID="8"/>
+      </block>
+      <block id="8" type="IO">
+        <options displayComment="true"/>
+        <visual color="255 255 0" posX="0.0" posY="180.0"/>
+        <content>Writeln("El cambio de aceite se ha hecho " + (getValueOf(c))+" veces");	;	</content>
+        <comment>"El cambio de aceite se ha hecho " +c+ " veces" </comment>
+        <connect ID="2"/>
+        <io ioType="1" message="El cambio de aceite se ha hecho " messageSuffix=" veces" newLine="true" variable="c"/>
+      </block>
+    </blocks>
+  </flowchart>
+</JavaBlocks>
